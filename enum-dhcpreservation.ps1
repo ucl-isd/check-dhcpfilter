@@ -14,8 +14,8 @@ $f = Get-DhcpServerv4Filter -ComputerName dhcp-win01
 $scope = Get-DhcpServerv4Scope -ComputerName $srv
 
 # Filter scopes
-#$s = $scope |? {$_.Name -match '^AudioVisual'}
-$s = $scope
+$s = $scope |? {$_.Name -match '^AudioVisual'}
+#$s = $scope
 
 # Get all reservations for the scopes
 $r = $s | Get-DhcpServerv4Reservation -ComputerName $srv
@@ -31,8 +31,12 @@ $mac
 	if (@($q) -ne $null) {
 		$i | Add-Member -Membertype NoteProperty -Name 'List' -Value $q.List
 	} else {
-		"*** Add $($i)"
+		"Allow: $mac"
+		Add-DhcpServerv4Filter -ComputerName $srv -List Allow -MacAddress $mac -Description $i.Name
 	}
 }
+
+# Is this necessary for filter replication?
+Invoke-DhcpServerv4FailoverReplication -ComputerName $srv
 
 #$r
