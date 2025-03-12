@@ -1,6 +1,7 @@
 # enum-dhcpreservation.ps1
 #							Mar 2025 Bri
 
+# Need to run on a D@U Mgmt server
 
 # Use this server for all DHCP operations
 # (there is a way to make this the default for a group of cmdlets - but ...)
