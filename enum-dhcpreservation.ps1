@@ -1,32 +1,33 @@
 # enum-dhcpreservation.ps1
 #							Mar 2025 Bri
 
-# Need to run on a D@U Mgmt server
+# Requires the DhcpServer module
+# => Run on a D@U Mgmt server
 
-# Use this server for all DHCP operations
+# Use this target for all DHCP operations
 # (there is a way to make this the default for a group of cmdlets - but ...)
 $srv = "dhcp-win01"
 
 
 # Get all filtered addresses
-$f = Get-DhcpServerv4Filter -ComputerName dhcp-win01
+$f = Get-DhcpServerv4Filter -ComputerName $srv
 
 # Get all DHCP scopes
 $scope = Get-DhcpServerv4Scope -ComputerName $srv
 
 # Filter scopes
 $s = $scope |? {$_.Name -match '^AudioVisual'}
-#$s = $scope
 
 # Get all reservations for the scopes
 $r = $s | Get-DhcpServerv4Reservation -ComputerName $srv
 
 
-# Output to console as still development
+# Check if MAC addresses are in the filter and add if not
 $r |% {
 	$i = $_
 	$mac = $i.ClientId
-$mac
+
+	# Find matching entries
 	$q = $f |? {$_.MacAddress -match $mac}
 
 	if (@($q) -ne $null) {
@@ -40,4 +41,3 @@ $mac
 # Is this necessary for filter replication?
 Invoke-DhcpServerv4FailoverReplication -ComputerName $srv
 
-#$r
