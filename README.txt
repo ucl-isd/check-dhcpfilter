@@ -27,3 +27,6 @@ dhcp-win02.ad.ucl.ac.uk
 ----
 
 This script can be run on a D@U Mgmt session (the PowerShell module is already present on these systems).
+
+[Watch this space for a utility system where this could be run as a scheduled task]
+
