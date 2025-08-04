@@ -26,7 +26,11 @@ dhcp-win02.ad.ucl.ac.uk
 
 ----
 
+Permission to update AD DHCP is granted to members of the access group:
+ag-dhcp-win-admin
+
+----
+
 This script can be run on a D@U Mgmt session (the PowerShell module is already present on these systems).
 
-[Watch this space for a utility system where this could be run as a scheduled task]
-
+Ideally this should be run on a utility system with the required module.
