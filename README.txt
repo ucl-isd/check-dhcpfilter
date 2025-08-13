@@ -13,7 +13,7 @@ Command to retrieve the list is:
 Get-DhcpServerv4Filter -ComputerName dhcp-win01
 
 The user performing the query/update needs to be a member (nested or otherwise) of the group:
-rg-dhcp-win-admin
+ag-dhcp-win-admin
 
 ----
 
