@@ -31,6 +31,6 @@ ag-dhcp-win-admin
 
 ----
 
-This script can be run on a D@U Mgmt session (the PowerShell module is already present on these systems).
+This script can be run on a D@U Mgmt session (the DhcpServer PowerShell module is already present on these systems).
 
-Ideally this should be run on a utility system with the required module.
+Ideally this should be run on a utility system with this required module.
