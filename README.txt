@@ -21,7 +21,7 @@ The script enumerates the reservations that have been allocated to scopes prefix
 Any MAC addresses from these reservations that are not already in the DHCP Filter are added.
 
 This operation is performed against both the AD DHCP servers:
-dhcp-win01.ac.ucl.ac.uk
+dhcp-win01.ad.ucl.ac.uk
 dhcp-win02.ad.ucl.ac.uk
 
 ----
