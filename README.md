@@ -47,11 +47,9 @@ update_allow [-srv <server-name>]
 The function is called for both AD DHCP servers:
 
 ```powershell
-update_allow "dhcp-win01"   # dhcp-win01.ac.ucl.ac.uk  (ac domain)
-update_allow "dhcp-win02"   # dhcp-win02.ad.ucl.ac.uk  (ad domain)
+update_allow "dhcp-win01"   # dhcp-win01.ad.ucl.ac.uk
+update_allow "dhcp-win02"   # dhcp-win02.ad.ucl.ac.uk
 ```
-
-> **Note:** The two servers intentionally reside in different sub-domains (`ac` and `ad`). This matches the values documented in the original `README.txt`.
 
 ---
 
